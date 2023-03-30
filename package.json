@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "@lighthouse-web3/sdk": "^0.1.12",
+    "@mui/material": "^5.11.15",
     "@openzeppelin/contracts": "^4.8.1",
     "@rainbow-me/rainbowkit": "^0.8.1",
     "@testing-library/jest-dom": "^5.16.5",
