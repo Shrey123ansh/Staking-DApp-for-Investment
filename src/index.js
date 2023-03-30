@@ -4,7 +4,8 @@ import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
-import "./styles/globals.css";
+// import "./styles/globals.css";
+import './style.css'
 
 // import { HealthCareProvider } from "../Context/healthCareContext";
 import { HealthCareProvider } from "./Context/HealthCareContext";
