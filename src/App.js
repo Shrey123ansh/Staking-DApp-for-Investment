@@ -69,7 +69,7 @@ const App = () => {
   useEffect(async () => {
     //  connectWallet();
     await getEtheriumContract();
-    console.log(totalStake);
+    // console.log(totalStake);
     await fetchData();
     isWallectConnected();
     console.log("Blockchain loaded");
@@ -335,7 +335,7 @@ const App = () => {
                       <span className="home-text42">Recommended</span>
                     </div>
                   </div>
-                  <div className="home-container55"></div>
+                  {/* <div className="home-container55"></div> */}
                 </div>
                 <div className="home-container56">
                   <span className="home-text43">
