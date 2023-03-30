@@ -7,7 +7,7 @@ export const HealthContext = React.createContext();
 
 export const HealthCareProvider = ({ children }) => {
   const [connectAccount, setAccount] = useState("");
-  const [totalStake, settotalStaked] = useState("");
+  const [totalStake, settotalStaked] = useState(null);
   const [yourStaking, setyourStaking] = useState("");
   const [yourStakinginINR, setyourStakinginINR] = useState("");
 
@@ -68,7 +68,7 @@ export const HealthCareProvider = ({ children }) => {
       const provider = new ethers.providers.Web3Provider(connection);
       const signer = provider.getSigner();
       const contract = fetchContract(signer);
-      // console.log(contract);
+      console.log(contract);
       return contract;
     } catch (error) {
       console.log(error);
@@ -86,8 +86,9 @@ export const HealthCareProvider = ({ children }) => {
       const contract = await getEtheriumContract();
       const TotalStaked = await contract.TotalStake();
       // console.log(ethers.utils.formatEther(TotalStaked));
-      const totalStake = ethers.utils.formatEther(TotalStaked);
-      settotalStaked(totalStake);
+      const totalStaker = ethers.utils.formatEther(TotalStaked);
+      settotalStaked(totalStaker);
+      console.log(totalStake);
 
       const YourStaking = await contract.YourStaking();
       // console.log(ethers.utils.formatEther(YourStaking));
@@ -111,13 +112,13 @@ export const HealthCareProvider = ({ children }) => {
       setyourClaiminINR(yourClaiminINRs);
 
       const GetAPY = await contract.getAPY();
-      // console.log(getAPY.toNumber());
+      console.log(GetAPY.toNumber());
       const getAPYs = GetAPY.toNumber();
       setgetAPY(getAPYs);
 
       const TotalStaker = await contract.TotalStaker();
       const totalStakerr = TotalStaker.toNumber();
-      // console.log(totalStaker);
+      console.log(totalStakerr);
       settotalStaker(totalStakerr);
     } catch (error) {
       reportError(error);
@@ -179,13 +180,16 @@ export const HealthCareProvider = ({ children }) => {
     }
   };
 
-  useEffect(() => {
-    connectWallet();
-    getEtheriumContract();
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   connectWallet();
+  //   getEtheriumContract();
+  //   fetchData();
+  //   console.log(yourStakinginINR)
+
+  // }, []);
 
   return (
+    
     <HealthContext.Provider
       value={{
         connectAccount,
@@ -202,7 +206,9 @@ export const HealthCareProvider = ({ children }) => {
         getUnstake,
         getClaimed,
         connectWallet,
-        isWallectConnected
+        getEtheriumContract,
+        isWallectConnected,
+        fetchData
       }}
     >
       {children}

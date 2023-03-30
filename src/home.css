@@ -579,7 +579,8 @@
   padding-top: var(--dl-space-space-oneandhalfunits);
   border-color: #fdfbfb;
   border-width: 2px;
-  padding-left: 26px;
+  border-style: solid;
+  padding-left: 8px;
   border-radius: var(--dl-radius-radius-radius8);
   margin-bottom: var(--dl-space-space-halfunit);
 }
@@ -974,6 +975,8 @@
   padding-left: 0px;
   border-radius: var(--dl-radius-radius-radius8);
   margin-bottom: var(--dl-space-space-halfunit);
+    border-style: solid;
+
 }
 .home-text57 {
   color: rgb(247, 246, 246);
@@ -1249,6 +1252,7 @@
   border-color: #fdfbfb;
   border-width: 2px;
   padding-left: 0px;
+  border-style: solid;
   border-radius: var(--dl-radius-radius-radius8);
   margin-bottom: var(--dl-space-space-halfunit);
 }
